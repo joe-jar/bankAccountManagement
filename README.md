@@ -1,11 +1,13 @@
+
 # Bank Account Management
 
 ## Description
-A Java-based project simulating basic banking operations, including access to account statement, deposits, withdrawals, and transaction history. Designed to practice object-oriented solid principles and implement clean, maintainable code.
+A Java-based project simulating basic banking operations, including access to account statements, deposits, withdrawals, and transaction history. Designed to display SOLID principles and implement clean, maintainable code.
 
-the project is developped with Spring boot,H2 Database an embedded in-memory database.
+The project is developed with Spring Boot and H2 Database (an embedded in-memory database).
 
-upon running the application the account table in the database is filled ( execution src/main/resources/import.sql) so we can test the endpoints right away 
+Upon running the application, the account table in the database is populated (via execution of `src/main/resources/import.sql`), so we can test the endpoints right away.
+
 ## Features
 - Deposit and withdraw money
 - View current account statement
@@ -19,28 +21,46 @@ upon running the application the account table in the database is filled ( execu
 1. Clone the repository:
    ```bash
    git clone https://github.com/joe-jar/bankAccountManagement.git
-   ```bash
    cd bankAccountManagement
+   mvn clean install
+   ```
+
+2. **Configure the Application Settings**:
+   The file `src/main/resources/application.properties` contains H2 database configuration (including credentials), application name, and port (8080).
+
+3. **Build the Project with Maven**:
+   From the root directory of the project, run the following command to download dependencies and build the project:
    ```bash
    mvn clean install
+   ```
 
+## Running the application
+   ```bash
+   mvn spring-boot:run
+   ```
 
+## Unit Tests
+Unit tests are written following TDD, covering all valid and invalid use cases. To run the tests, use the following command:
+   ```bash
+   mvn test
+   ```
 
 ## Endpoints
 
-for all the use cases use  1 or 2 as id (the identifiers of the the accounts persisted upon running the app)
+For all use cases, use `1` or `2` as the account ID (these are the identifiers of the accounts persisted upon running the app).
+
 ### Get Account Statement
 - **URL**: `/api/accounts/{id}/statement`
 - **Method**: `GET`
 - **Description**: Retrieves the account statement for a specific account using its ID.
 
 ### Deposit Money
-- **URL**: `/api/accounts/{id}/deposit`
+- **URL**: `/api/accounts/{id}/deposit?amount={amount}`
 - **Method**: `POST`
 - **Description**: Deposits a specified amount into the account identified by `id`.
 
 ### Withdraw Money
-- **URL**: `/api/accounts/{id}/withdraw`
+- **URL**: `/api/accounts/{id}/withdraw?amount={amount}`
 - **Method**: `POST`
 - **Description**: Withdraws a specified amount from the account identified by `id`.
 
