@@ -18,7 +18,7 @@ Upon running the application, the account table in the database is populated (vi
 - Spring Boot 3.3.5
 
 ## Setup Instructions
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/joe-jar/bankAccountManagement.git
    cd bankAccountManagement

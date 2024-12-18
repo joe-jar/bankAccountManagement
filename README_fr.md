@@ -20,7 +20,7 @@ Lors de l'exécution de l'application, la table des comptes dans la base de donn
 - Spring Boot 3.3.5
 
 ## Instructions d'installation
-1. Clonez le dépôt :
+1. **Clonez le repository** :
    ```bash
    git clone https://github.com/joe-jar/bankAccountManagement.git
    cd bankAccountManagement
@@ -30,7 +30,7 @@ Lors de l'exécution de l'application, la table des comptes dans la base de donn
 2. **Configurer les paramètres de l'application** :
    Le fichier `src/main/resources/application.properties` contient la configuration de la base de données H2 (y compris les credentials), le nom de l'application et le port (8080).
 
-3. **Construire le projet avec Maven** :
+3. **build du projet avec Maven** :
    Depuis le répertoire racine du projet, exécutez la commande suivante pour inclure les dépendances et construire le projet :
    ```bash
    mvn clean install
